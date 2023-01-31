@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>CSS Grid starting point</title>
+  <style>
+    body {
+      width: 90%;
+      max-width: 900px;
+      margin: 2em auto;
+      font: .9em/1.2 Arial, Helvetica, sans-serif;
+      /* 给父元素设置布局为display：grid */
+    }
+
+    .container>div {
+      border-radius: 5px;
+      padding: 10px;
+      background-color: rgb(207, 232, 220);
+      border: 2px solid rgb(79, 185, 227);
+      /* 设置为grid 网格布局 */
+    }
+
+    .container {
+      display: grid;
+      /* fr 表示按比例来划分空间，其中按照可用空间来划分 */
+      /* grid-template-columns: 2fr 2fr 1fr; */
+      /* 设置网格间隙 */
+      /* grid-column: 设置列间隙; */
+      /* grid-row: 设置行间隙; */
+      /* grid-gap: ; */
+      /* grid  设置两者的属性，同事设置 行和列间隙*/
+      grid-gap: 20px;
+      grid: 20px;
+      /* 使用 repeat来构造重复列重复行 */
+      /* 第一个传入 repeat 函数的值（3）表明了后续列宽的配置要重复多少次，而第二个值（1fr）表示需要重复的构建配置，这个配置可以具有多个长度设定。 */
+      /* 下方表示 重复1fr 和 2fr两次 */
+      /* grid-template-columns: repeat(3, 1fr); ==等价于下方的代码 */
+      /* grid-template-columns: 1fr 1fr 1fr; */
+      /* 自动多列填充 */
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-auto-rows: minmax(100px, auto);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Simple grid example</h1>
+
+  <div class="container">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+    <div>Four</div>
+    <div>Five</div>
+    <div>Six</div>
+    <div>Seven</div>
+  </div>
+
+</body>
+
+</html>
